@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение бронирования</title>
+</head>
+<body>
+    <h1>Ваше бронирование подтверждено!</h1>
+    <p>Спасибо за ваше бронирование на фильм с ID: {{ movie_id }}.</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <a href="/">Вернуться на главную</a>
+</body>
+</html>
+
+

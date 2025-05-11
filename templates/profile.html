@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container"> <!-- Обертка для контейнера -->
+        <h1>Ваш профиль</h1>
+        <h2>Забронированные места</h2>
+
+        <ul>
+            {% for booking in bookings %}
+                <li>Фильм: {{ booking[1] }}, Места: {{ booking[2] }}
+                    <!-- Форма для отмены бронирования -->
+                    <form action="{{ url_for('cancel_booking', booking_id=booking[0]) }}" method="POST" style="display:inline;">
+                        <input type="submit" value="Отменить бронь">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('index') }}">Вернуться на главную</a>
+    </div> <!-- Конец контейнера -->
+</body>
+</html>
+
+
+
+
+

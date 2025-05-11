@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ movie.title }}</title>
+</head>
+<body>
+    <div class="movie-details">
+        <div class="movie-poster">
+            <img src="{{ url_for('static', filename='images/' + movie['image']) }}" alt="{{ movie.title }}">
+        </div>
+
+        <div class="movie-description">
+            <h1>{{ movie.title }}</h1>
+            <p>{{ movie.description }}</p>
+            <a href="{{ url_for('booking', movie_id=movie.id) }}">Забронировать места</a>
+            <br>
+            <a href="{{ url_for('index') }}">Назад</a>
+        </div>
+    </div>
+</body>
+</html>
+
+

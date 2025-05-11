@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Кинотеатр</title>
+</head>
+<body>
+    <h1 class="centered-title">Афиша Фильмов</h1> <!-- Добавлен класс для центрирования -->
+
+    <!-- Проверка, вошел ли пользователь в систему -->
+    <div class="header">
+    {% if session.get('user_id') %}
+        <p class="welcome-message"><a href="{{ url_for('logout') }}">Выйти</a> | <a href="{{ url_for('profile') }}">Профиль</a></p>
+    {% else %}
+        <p class="welcome-message"><a href="{{ url_for('login') }}">Войти</a> | <a href="{{ url_for('register') }}">Зарегистрируйтесь</a></p>
+    {% endif %}
+</div>
+
+
+    <div class="movies">
+        {% for movie in movies %}
+            <div class="movie-card">
+                <img src="{{ url_for('static', filename='images/' + movie[3]) }}" alt="{{ movie[1] }}"> <!-- Предполагаем, что URL изображения находится в 4-й колонке -->
+                <h2>{{ movie[1] }}</h2> <!-- название фильма в 2-й колонке -->
+                <a href="{{ url_for('movie', movie_id=movie[0]) }}">Подробнее о фильме</a><br>
+                <a href="{{ url_for('booking', movie_id=movie[0]) }}">Забронировать места</a>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
+
+
+

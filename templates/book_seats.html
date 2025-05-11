@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование мест</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Подключение CSS --><!-- Подключение внешнего JS -->
+</head>
+<body>
+    <div class="screen">Экран</div> <!-- Элемент для экрана -->
+
+    <h1>Выберите места для бронирования</h1>
+
+    <form method="POST"> <!-- Форма для отправки данных -->
+        <input type="hidden" id="movie_id" value="{{ movie_id }}">
+ <!-- Скрытое поле для movie_id -->
+        <div class="seats-container">
+            {% for seat in range(1, 41) %}
+                <div id="{{ seat }}" class="seat {% if seat in booked_seats %}booked{% endif %}" onclick="toggleSeat({{ seat }})">
+                    {{ seat }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <h2>Выбранные места:</h2>
+        <div id="selected_seats"></div>
+        <input type="hidden" name="seats" id="hidden_seats" value=""> <!-- Скрытое поле для передачи выбранных мест -->
+
+        <input type="submit" value="Подтвердить выбранные места"> <!-- Кнопка для подтверждения выбора -->
+    </form>
+
+    <a href="{{ url_for('index') }}">Вернуться на главную</a> <!-- Ссылка на главную страницу -->
+    <script src="{{ url_for('static', filename='booking.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+

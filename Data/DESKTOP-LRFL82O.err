@@ -1,0 +1,9 @@
+2025-04-27T13:25:05.087092Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2025-04-27T13:25:05.159155Z 0 [System] [MY-010116] [Server] D:\MySQLdb\bin\mysqld.exe (mysqld 9.3.0) starting as process 14808
+2025-04-27T13:25:05.201653Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2025-04-27T13:25:05.521342Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2025-04-27T13:25:05.843685Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2025-04-27T13:25:05.844605Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2025-04-27T13:25:05.879054Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
+2025-04-27T13:25:05.879095Z 0 [System] [MY-010931] [Server] D:\MySQLdb\bin\mysqld.exe: ready for connections. Version: '9.3.0'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2025-04-27T13:41:34.636054Z 16 [Warning] [MY-013360] [Server] Plugin sha256_password reported: ''sha256_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
