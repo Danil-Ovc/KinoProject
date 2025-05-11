@@ -5,6 +5,7 @@ body {
     background-attachment: fixed; /* Фон не смещается при прокрутке */
     color: #6495ed; /* Цвет текста */
     font-family: Arial, sans-serif; /* Шрифт страницы */
+    font-weight: bold;
 }
 
 /* Заголовок фильма */
@@ -167,7 +168,8 @@ body {
 /* Стили для ссылок */
 a {
     text-decoration: none; /* Убираем подчеркивание */
-    color: #30ba8f; /* Синий цвет для ссылок */
+    color: red; /* Синий цвет для ссылок */
+    font-weight: bold;
 }
 
 a:hover {
